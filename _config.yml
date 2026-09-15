@@ -1,50 +1,95 @@
-# ===== 站点基本设置 =====
-title: 成功了
-description: zhryhzs 的个人博客 —— 记录学习、折腾与所得。
+# ============================================================
+#  Hexo 站点配置 —— zhryhzs 的博客
+#  主题：LostStar (MIT)
+#  网址：https://zhryhzs.github.io
+# ============================================================
+
+# ---------- 站点 ----------
+title: zhryhzs 的博客
+subtitle: 记录学习与折腾
+description: 记录学习、折腾与所得。
+keywords: 博客,学习笔记,折腾
 author: zhryhzs
-
-# 网页语言，影响搜索引擎和无障碍朗读，中文站写 zh-CN
-lang: zh-CN
-
-# ===== 站点地址（仓库已改名为 zhryhzs.github.io，属于「用户站点」）=====
-# 用户站点直接挂在域名根目录下，所以 baseurl 必须留空
-# 最终网址：https://zhryhzs.github.io/
-url: "https://zhryhzs.github.io"
-baseurl: ""
-
-# 时区，保证文章日期正确
+language: zh-CN
 timezone: Asia/Shanghai
 
-# 右下角社媒图标用（老版本主题读这个字段）
-github_username: zhryhzs
+# ---------- 网址 ----------
+url: https://zhryhzs.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: false
+  trailing_html: false
 
-# ===== 主题 =====
-theme: minima
+# ---------- 目录 ----------
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
-# ===== 插件（以下三个都是 GitHub Pages 官方支持的）=====
-plugins:
-  - jekyll-feed      # 生成 RSS 订阅 /feed.xml
-  - jekyll-seo-tag   # 自动生成 SEO 标签
-  - jekyll-sitemap   # 生成 sitemap.xml 便于搜索引擎收录
+# ---------- 写作 ----------
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude:
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+# ★ 主题自带 Highlight.js，必须关掉 Hexo 内置高亮，否则代码块会出现双层样式
+syntax_highlighter: highlight.js
+highlight:
+  enable: false
+  line_number: false
+  auto_detect: false
+  tab_replace:
+  wrap: false
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace:
 
-# ===== 首页与文章列表 =====
-show_excerpts: true          # 首页显示文章摘要
-permalink: /:year/:month/:day/:title/   # 文章永久链接格式
+# ---------- 首页 / 归档 / 分类 / 标签 ----------
+index_generator:
+  path: ''
+  per_page: 6
+  order_by: -date
 
-# ===== Minima 主题设置 =====
-minima:
-  date_format: "%Y-%m-%d"
-  social_links:
-    - { platform: github, user_url: "https://github.com/zhryhzs" }
+archive_generator:
+  enabled: true
+  per_page: 0
+  yearly: false
+  monthly: false
+  daily: false
 
-# ===== 头部导航 =====
-header_pages:
-  - about.md
+category_generator:
+  per_page: 10
+tag_generator:
+  per_page: 10
 
-# ===== 构建排除项 =====
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - vendor/
-  - .github/
+# ---------- 日期与分页 ----------
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+# 用 mtime 的话，GitHub Actions 每次拉代码都会把「更新日期」刷成构建时间
+updated_option: date
+per_page: 10
+pagination_dir: page
+
+# ---------- 主题 ----------
+theme: lostar
+
+# ---------- 部署 ----------
+# 用 GitHub Actions 构建并发布，不需要 hexo-deployer-git
+deploy:
+  type: ''
