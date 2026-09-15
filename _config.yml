@@ -1,0 +1,50 @@
+# ===== 站点基本设置 =====
+title: 成功了
+description: zhryhzs 的个人博客 —— 记录学习、折腾与所得。
+author: zhryhzs
+
+# 网页语言，影响搜索引擎和无障碍朗读，中文站写 zh-CN
+lang: zh-CN
+
+# ===== 站点地址（仓库名改成 zhryhzs-one 后必须这样写）=====
+# 项目站点 = 用户名站点 + 仓库名子路径
+# 最终网址：https://zhryhzs.github.io/zhryhzs-one/
+url: "https://zhryhzs.github.io"
+baseurl: "/zhryhzs-one"
+
+# 时区，保证文章日期正确
+timezone: Asia/Shanghai
+
+# 右下角社媒图标用（老版本主题读这个字段）
+github_username: zhryhzs
+
+# ===== 主题 =====
+theme: minima
+
+# ===== 插件（以下三个都是 GitHub Pages 官方支持的）=====
+plugins:
+  - jekyll-feed      # 生成 RSS 订阅 /feed.xml
+  - jekyll-seo-tag   # 自动生成 SEO 标签
+  - jekyll-sitemap   # 生成 sitemap.xml 便于搜索引擎收录
+
+# ===== 首页与文章列表 =====
+show_excerpts: true          # 首页显示文章摘要
+permalink: /:year/:month/:day/:title/   # 文章永久链接格式
+
+# ===== Minima 主题设置 =====
+minima:
+  date_format: "%Y-%m-%d"
+  social_links:
+    - { platform: github, user_url: "https://github.com/zhryhzs" }
+
+# ===== 头部导航 =====
+header_pages:
+  - about.md
+
+# ===== 构建排除项 =====
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .github/
