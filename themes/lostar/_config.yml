@@ -1,0 +1,222 @@
+# ============================================================
+#  LostStar 主题配置（已汉化）
+#  上游：https://github.com/thatnghiepdev/hexo-theme-lostar  (MIT)
+# ============================================================
+
+# 头像图片（放在 source/images/ 或主题的 source/images/ 里）
+avatar: /images/avatar.gif
+
+# 首页大背景图，可写多张，每次刷新随机选一张
+background:
+  - /images/bg-main.jpg
+
+# 加载动画图片
+loading: /images/loading.gif
+
+# ---------- 分类/标签配色系统 ----------
+taxonomy_styles:
+  enable: true
+
+  # 默认配色（没匹配到分类时使用）
+  defaults:
+    post:
+      bg: "#fffdfa"
+      text: "#1e3e3f"
+    category:
+      bg: "#eef2f7"
+      text: "#4f6370"
+    tag:
+      bg: "#eef2f7"
+      text: "#4f6370"
+    effects:
+      outline:
+        enable: false
+        color: "#00000033"
+        width: "1px"
+      spark:
+        enable: false
+        color: "#ffffff"
+        blur: "8px"
+        opacity: 0.35
+        duration: "2.6s"
+
+  # 按分类单独配色：这里的名字要和文章里的 categories 完全一致
+  categories:
+    "随笔":
+      post:
+        bg: "#fffdfa"
+        text: "#1e3e3f"
+      category:
+        bg: "#cfe3f7"
+        text: "#1e3e4f"
+      tag_default:
+        bg: "#eef2f7"
+        text: "#4f6370"
+      effects:
+        outline:
+          enable: false
+        spark:
+          enable: false
+    "教程":
+      post:
+        bg: "#f7fdf3"
+        text: "#213a1b"
+      category:
+        bg: "#c9e8b8"
+        text: "#25401a"
+      tag_default:
+        bg: "#e6f0b8"
+        text: "#3a4a1a"
+      effects:
+        outline:
+          enable: true
+          color: "#c9e8b866"
+          width: "1px"
+        spark:
+          enable: false
+
+  # 按标签覆盖颜色
+  tags: {}
+
+# ---------- 顶部导航 ----------
+menu:
+  首页:
+    name: house
+    theme: solid
+    link: /
+  关于:
+    name: id-card
+    theme: solid
+    link: /about
+  归档:
+    name: box-archive
+    theme: solid
+    link: /archives
+  分类:
+    name: bookmark
+    theme: solid
+    link: /categories
+  标签:
+    name: tags
+    theme: solid
+    link: /tags
+
+# ---------- 侧边个人卡片 ----------
+card:
+  enable: true
+  description: |
+    记录学习、折腾与所得
+  iconLinks:
+  friendLinks:
+    GitHub: https://github.com/zhryhzs
+
+# ---------- 页脚 ----------
+footer:
+  since: 2026
+  copyright:
+    name: zhryhzs
+    handle: zhryhzs
+  ICP:
+    enable: false
+    code:
+    link:
+
+# ---------- Polyfill（现代浏览器用不到，关掉少一个请求）----------
+polyfill:
+  enable: false
+  features:
+    - default
+
+# ---------- 代码高亮（Highlight.js）----------
+highlight:
+  enable: true
+  style: github
+
+# ---------- 数学公式（KaTeX）----------
+math:
+  enable: false
+
+# ---------- 图片灯箱 ----------
+preview:
+  enable: true
+
+# ---------- 星空背景（主题招牌效果）----------
+stars:
+  enable: true
+
+# ---------- 文章加密 ----------
+crypto:
+  enable: false
+
+# ---------- 本地搜索 ----------
+search:
+  enable: false
+
+# ---------- 评论系统（按需开启，默认全关）----------
+giscus:
+  enable: false
+  src: https://giscus.app/client.js
+  repo:
+  repoID:
+  category:
+  categoryID:
+  mapping: pathname
+  strict: 0
+  reactionsEnabled: 1
+  emitMetadata: 0
+  inputPosition: bottom
+  theme: preferred_color_scheme
+  lang:
+
+gitalk:
+  enable: false
+  clientID:
+  clientSecret:
+  repo:
+  owner:
+  admin:
+  language:
+  proxy:
+
+waline:
+  enable: false
+  serverURL:
+  locale:
+  commentCount: true
+  pageview: false
+  emoji:
+    - https://unpkg.com/@waline/emojis@1.2.0/weibo
+    - https://unpkg.com/@waline/emojis@1.2.0/bilibili
+    - https://unpkg.com/@waline/emojis@1.2.0/qq
+  meta:
+    - nick
+    - mail
+    - link
+  requiredMeta:
+    - nick
+  lang:
+  wordLimit: 0
+  login: enable
+  pageSize: 10
+
+twikoo:
+  enable: false
+  envID:
+  region:
+  path: location.pathname
+  lang:
+
+# ---------- 界面文案（i18n）----------
+i18n:
+  read_more: 阅读全文
+  loading_title: LOADING
+  loading_message: 加载中，请稍候…
+  crypto_placeholder: 本文已加密，请输入密码
+
+# ---------- SEO ----------
+seo:
+  default_image: /images/avatar.gif
+  twitter_site:
+  twitter_id:
+  fb_app_id:
+  fb_admins:
