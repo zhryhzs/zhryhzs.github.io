@@ -1,24 +1,23 @@
-# zhryhzs-one · 从零到上线的完整手册
+# zhryhzs.github.io · 从零到上线的完整手册
 
-这是 **zhryhzs** 的个人博客源码（本地文件夹名仍叫 `zhryhzs.github.io`），
-用 **Jekyll + Minima** 主题写，托管在 **GitHub Pages** 上。
+这是 **zhryhzs** 的个人博客源码，用 **Jekyll + Minima** 主题写，托管在 **GitHub Pages** 上。
 全部免费，不需要买服务器、不需要备案。
 
 | 项目 | 值 |
 | --- | --- |
 | GitHub 用户名 | `zhryhzs` |
-| 仓库名 | **`zhryhzs-one`**（属于「项目站点」，不是用户站点） |
-| 仓库地址 | <https://github.com/zhryhzs/zhryhzs-one> |
-| **上线后的网址** | **<https://zhryhzs.github.io/zhryhzs-one/>** |
+| 仓库名 | **`zhryhzs.github.io`**（「用户站点」，网址就是域名根目录） |
+| 仓库地址 | <https://github.com/zhryhzs/zhryhzs.github.io> |
+| **上线后的网址** | **<https://zhryhzs.github.io/>** |
 | `_config.yml` 的 `url` | `https://zhryhzs.github.io` |
-| `_config.yml` 的 `baseurl` | `/zhryhzs-one` ← 项目站点必须写，否则样式和链接全丢 |
+| `_config.yml` 的 `baseurl` | `""` ← 用户站点必须留空 |
 
-> ⚠️ **本文档后续章节里凡出现 `https://zhryhzs.github.io`（不带 `/zhryhzs-one/`），
-> 请一律理解成 `https://zhryhzs.github.io/zhryhzs-one/`；凡提到"仓库名"请理解成 `zhryhzs-one`。**
+> 仓库原本叫 `zhryhzs-one`，2026-09-15 改名为 `zhryhzs.github.io`。
+> 改名的效果是：网址从 `https://zhryhzs.github.io/` 变成干净的
+> `https://zhryhzs.github.io/`。
 >
-> 如果你以后想把网址变干净（`https://zhryhzs.github.io`，没有后面那一截），
-> 只需把仓库改名成 `zhryhzs.github.io`，同时把 `_config.yml` 的 `baseurl` 改回 `""`，
-> 其余一个字都不用动。
+> ⚠️ **改名必须同时改两处**：仓库名 + `_config.yml` 的 `baseurl`（`/zhryhzs-one` → `""`）。
+> 只改一个的话，网页能打开但**样式全丢**（白底黑字），因为 CSS 链接还指向已经不存在的旧路径。
 
 > 这份 README 是给自己看的操作手册，所以写得非常啰嗦——每一步都写了「点哪里、看到什么、
 > 卡住了怎么办」。第一次照着做一遍，以后只需要看第 7 章（写文章）。
@@ -51,10 +50,10 @@
 | 步骤 | 做什么 | 大概耗时 |
 | --- | --- | --- |
 | 1 | 确认 GitHub 用户名是 `zhryhzs` | ✅ 已完成 |
-| 2 | 新建仓库 `zhryhzs-one`（Public） | ✅ 已完成 |
+| 2 | 新建仓库 `zhryhzs.github.io`（Public） | ✅ 已完成 |
 | 3 | 把本文件夹里的文件全部上传上去 | 2 分钟 |
 | 4 | Settings → Pages → Source 选 `Deploy from a branch` → `main` → `/(root)` → Save | 1 分钟 |
-| 5 | 等 1~2 分钟，打开 <https://zhryhzs.github.io/zhryhzs-one/> | — |
+| 5 | 等 1~2 分钟，打开 <https://zhryhzs.github.io/> | — |
 
 **如果你只想最快看到效果**：照上面 5 步做，然后跳到第 7 章学写文章。
 第 4 章是这 5 步的详细展开版。
@@ -82,7 +81,7 @@ GitHub Pages 走的是另一条路：**在你自己电脑上（或 GitHub 的服
         │
         │  ① 上传 / git push
         ▼
-GitHub 仓库（github.com/zhryhzs/zhryhzs-one）
+GitHub 仓库（github.com/zhryhzs/zhryhzs.github.io）
         │
         │  ② GitHub 自动运行 Jekyll：套主题、生成 HTML
         ▼
@@ -90,27 +89,27 @@ GitHub 仓库（github.com/zhryhzs/zhryhzs-one）
         │
         │  ③ 自动发布
         ▼
-https://zhryhzs.github.io/zhryhzs-one/  ← 全世界的访客看到的页面
+https://zhryhzs.github.io/  ← 全世界的访客看到的页面
 ```
 
 **关键点：你永远只编辑下划线开头的目录（`_posts`）、`_config.yml`、几个 `.md` 页面。
 其他东西都是自动生成的，不要手动改。**
 
-### 1.3 用户站点 vs 项目站点（我们的仓库属于后者）
+### 1.3 用户站点 vs 项目站点（我们的仓库是用户站点）
 
 GitHub Pages 有两种站点：
 
 | 类型 | 仓库名 | 网址 | `baseurl` 怎么填 |
 | --- | --- | --- | --- |
-| **用户站点** | 必须正好是 `zhryhzs.github.io`（和用户名完全一致） | `https://zhryhzs.github.io` | 留空 `""` |
-| **项目站点**（我们在用） | 任意名字，这里是 `zhryhzs-one` | `https://zhryhzs.github.io/zhryhzs-one/` | 必须是 `/zhryhzs-one` |
+| **用户站点**（我们在用） | 必须正好是 `zhryhzs.github.io`（和用户名完全一致） | `https://zhryhzs.github.io/` | 留空 `""` |
+| 项目站点 | 任意名字，例如 `my-notes` | `https://zhryhzs.github.io/my-notes/` | 必须是 `/my-notes` |
 
-**两者唯一的区别：项目站点的网址多了一段仓库名。** 所以必须在 `_config.yml` 里用
-`baseurl` 告诉 Jekyll「我的站点挂在子目录下」，否则 CSS、导航、图片的链接都会指错地方——
-典型症状是**网页能打开，但完全没有样式**（白底黑字、没有排版）。
+**两者唯一的区别：项目站点的网址多了一段仓库名。** 仓库原来叫 `zhryhzs-one` 时属于
+项目站点，必须写 `baseurl: "/zhryhzs-one"`；改名成 `zhryhzs.github.io` 之后变成用户站点，
+`baseurl` 必须**改回空字符串**，否则 CSS、导航、图片的链接会指向
+`/zhryhzs-one/...` 这个已经不存在的路径——典型症状就是**网页能打开，但完全没有样式**。
 
-每个账号**只能有一个**用户站点仓库。想升级成用户站点（网址更短）：把仓库改名成
-`zhryhzs.github.io`，再把 `baseurl` 改成 `""`，其余一个字都不用动。
+每个账号**只能有一个**用户站点仓库，所以这个仓库名不能再给别的项目用了。
 
 ---
 
@@ -168,11 +167,10 @@ GitHub Pages 有两种站点：
 2. **Repository name** 填：
 
    ```
-   zhryhzs-one
+   zhryhzs.github.io
    ```
 
-   （这一步你已经做完了。如果哪天想改成用户站点，就在这里把名字改成
-   `zhryhzs.github.io`，同时把 `_config.yml` 的 `baseurl` 改回 `""`。）
+   必须和用户名完全一致（全小写、结尾不能有空格）。仓库已建好且命名正确，这一步无需再做。
 3. **Description**（可选）填：`我的个人博客`。
 4. 可见性选 **Public**。
    ⚠️ 选 Private 的话，免费账号开启 Pages 会失败（GitHub Pro 才支持私有仓库发布）。
@@ -229,7 +227,7 @@ about.md    404.html    README.md       .gitignore
 5. 点 **Save**。
 6. 页面顶部会出现一条蓝色提示，几秒后刷新，会变成：
 
-   > **Your site is live at https://zhryhzs.github.io/zhryhzs-one/**
+   > **Your site is live at https://zhryhzs.github.io/**
 
    以及一个 **Visit site** 按钮。
 
@@ -249,7 +247,7 @@ about.md    404.html    README.md       .gitignore
 
 ### A6. 验证是否真的上线
 
-1. 打开 <https://zhryhzs.github.io/zhryhzs-one/>
+1. 打开 <https://zhryhzs.github.io/>
 2. 应该看到「成功了」标题、两篇文章《你好，世界》和《如何写一篇新文章（Markdown 速查）》、
    顶部有「关于」导航。
 3. 点进文章 → 能正常显示中文和代码块 → 说明一切正常。
@@ -330,7 +328,7 @@ author: zhryhzs                  # 作者名
 lang: zh-CN                      # 网页语言，中文站固定写这个
 
 url: "https://zhryhzs.github.io" # 站点完整地址，末尾不要加 /
-baseurl: "/zhryhzs-one"          # ★ 关键：项目站点的子路径 = 仓库名，前面要带斜杠
+baseurl: ""                      # ★ 用户站点留空；若仓库是项目站点，这里写 "/仓库名"
 
 timezone: Asia/Shanghai          # 时区，保证文章日期不跑偏
 
@@ -588,7 +586,7 @@ $brand-color: #2a7ae2;   /* 把这行放在 @import "minima"; 的上面才能生
    bundle exec jekyll serve
    ```
 
-5. 浏览器打开 <http://127.0.0.1:4000/zhryhzs-one/>。改文件后保存，刷新页面即可看到变化
+5. 浏览器打开 <http://127.0.0.1:4000/>。改文件后保存，刷新页面即可看到变化
    （加 `--livereload` 可以自动刷新）。
 
 常见报错：
@@ -610,14 +608,14 @@ $brand-color: #2a7ae2;   /* 把这行放在 @import "minima"; 的上面才能生
 按顺序排查：
 
 1. **等 2 分钟**。首次开启 Pages 后要构建，期间就是 404。
-2. 网址里有没有带上仓库名？本博客是**项目站点**，正确网址是
-   <https://zhryhzs.github.io/zhryhzs-one/>，**不是** `https://zhryhzs.github.io`。
-3. `_config.yml` 里 `baseurl` 是不是 `"/zhryhzs-one"`？写错的话页面能打开但样式全丢。
+2. 网址对不对？本博客是**用户站点**，正确网址就是 <https://zhryhzs.github.io/>，
+   后面**不能**再带仓库名。
+3. `_config.yml` 里 `baseurl` 必须是 `""`（空字符串）。如果还写着 `"/zhryhzs-one"`，
+   页面能打开但样式全丢——这是仓库改名后最容易忘记改的地方。
 4. Settings → Pages → Source 是不是 `Deploy from a branch` + `main` + `/(root)`？
 5. 仓库是 Public 吗？
-6. 仓库根目录直接就是 `index.md` 吗？如果变成了
-   `zhryhzs-one/zhryhzs.github.io/index.md`，说明上传时多套了一层文件夹，
-   需要把里面的文件挪到根目录。
+6. 仓库根目录直接就是 `index.md` 吗？如果变成了 `zhryhzs.github.io/index.md`
+   这样多套了一层文件夹，说明上传时把整个文件夹拖进去了，需要把里面的文件挪到根目录。
 6. Settings → Pages 顶部会显示最近一次构建的状态；失败会有一条红字，点进去看详情。
 
 ### 10.2 首页出来了，但文章列表是空的
@@ -675,7 +673,7 @@ $brand-color: #2a7ae2;   /* 把这行放在 @import "minima"; 的上面才能生
 cd "D:\开山鼻祖\DeepSeek Harness_files\zhryhzs.github.io"
 git init
 git branch -M main
-git remote add origin https://github.com/zhryhzs/zhryhzs-one.git
+git remote add origin https://github.com/zhryhzs/zhryhzs.github.io.git
 git config --global user.name "zhryhzs"
 git config --global user.email "你的邮箱@example.com"
 ```
@@ -720,12 +718,12 @@ git push                         # 推到 GitHub（会自动重新部署）
 
 发布前的最后一遍对照：
 
-- [x] 仓库名 = `zhryhzs-one`，可见性 = Public
-- [ ] 仓库根目录直接能看到 `_config.yml`、`index.md`、`_posts/`、`assets/`
-- [ ] `_config.yml` 里 `url: "https://zhryhzs.github.io"` 且 `baseurl: "/zhryhzs-one"`
+- [x] 仓库名 = `zhryhzs.github.io`，可见性 = Public
+- [x] 仓库根目录能看到 `_config.yml`、`index.md`、`_posts/`、`assets/`
+- [x] `_config.yml` 里 `url: "https://zhryhzs.github.io"` 且 `baseurl: ""`
 - [ ] Settings → Pages → Source：`Deploy from a branch` / `main` / `/(root)` / 已 Save
 - [ ] （路线 A）`.github/workflows/jekyll.yml` 已删除
-- [ ] 访问 <https://zhryhzs.github.io/zhryhzs-one/> 正常，文章能点开
+- [ ] 访问 <https://zhryhzs.github.io/> 正常，文章能点开
 - [ ] `/about/` 页面正常，`/feed.xml` 有内容（RSS 订阅）
 - [ ] 手机浏览器上也打开看一眼（主题自带响应式布局）
 
