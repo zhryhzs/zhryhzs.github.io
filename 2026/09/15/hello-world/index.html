@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>你好，世界 | zhryhzs 的博客</title>
+    <meta name="author" content="zhryhzs" />
+
+    <meta name="keywords" content="博客,开始" />
+    <link rel="canonical" href="https://zhryhzs.github.io/2026/09/15/hello-world/" />
+    <meta name="description" content="这是博客的第一篇文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你好，世界">
+<meta property="og:url" content="https://zhryhzs.github.io/2026/09/15/hello-world/">
+<meta property="og:site_name" content="zhryhzs 的博客">
+<meta property="og:description" content="这是博客的第一篇文章。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhryhzs.github.io/images/avatar.gif">
+<meta property="article:published_time" content="2026-09-15T13:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-15T13:00:00.000Z">
+<meta property="article:author" content="zhryhzs">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="开始">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhryhzs.github.io/images/avatar.gif">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="icon" href="/images/avatar.gif" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.38/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="/js/lib/stars.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载中，请稍候…</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZHRYHZS 的博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZHRYHZS 的博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            
+<div class="article" data-category="随笔" style="--tx-post-bg:#fffdfa;--tx-post-text:#1e3e3f;--tx-cat-bg:#cfe3f7;--tx-cat-text:#1e3e4f">
+    <div>
+        <h1>你好，世界</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/9/15
+        </span>
+        
+        
+        <span class="category">
+            <a href="/categories/%E9%9A%8F%E7%AC%94/" style="color:#1e3e4f">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                随笔
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color:#4f6370">
+                    博客
+                </a>
+            </span>
+            
+            
+            <span class="tag">
+                <a href="/tags/%E5%BC%80%E5%A7%8B/" style="color:#4f6370">
+                    开始
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>这是博客的第一篇文章。</p>
+<span id="more"></span>
+
+<h2 id="为什么要有这个博客"><a href="#为什么要有这个博客" class="headerlink" title="为什么要有这个博客"></a>为什么要有这个博客</h2><p>因为想找个地方把学过的东西写下来。写下来的过程本身就是一次复习；<br>写出来的东西，说不定以后能帮到别人。</p>
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><p>这个博客用下面这些搭起来，全部免费：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hexo</td>
+<td>把 Markdown 变成静态网页</td>
+</tr>
+<tr>
+<td>LostStar 主题</td>
+<td>界面外观，MIT 开源</td>
+</tr>
+<tr>
+<td>GitHub Pages</td>
+<td>网页托管，不用服务器</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td>每次提交自动重新构建</td>
+</tr>
+</tbody></table>
+<h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><p>打算按这个节奏更新：</p>
+<ol>
+<li>学习笔记 —— 看了什么、学到什么</li>
+<li>踩坑记录 —— 卡了多久、怎么解决的</li>
+<li>一些小项目 —— 做了什么，代码放哪</li>
+</ol>
+<pre><code class="highlight bash"><span class="comment"># 写一篇新文章</span>
+hexo new <span class="string">&quot;文章标题&quot;</span>
+<span class="comment"># 本地预览</span>
+hexo server
+<span class="comment"># 生成静态文件</span>
+hexo generate</code></pre>
+
+<p>就这样，开始吧 🚀</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy; 2026 Made by
+            <a target="_blank" rel="noopener" href="https://github.com/dinhkarate">dinhkarate</a>
+            from <a target="_blank" rel="noopener" href="https://thatnghiep.dev">thatnghiep.dev</a>
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/thatnghiep-dev/hexo-theme-loststar">LostStar Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
