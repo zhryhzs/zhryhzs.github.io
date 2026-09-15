@@ -6,11 +6,11 @@ author: zhryhzs
 # 网页语言，影响搜索引擎和无障碍朗读，中文站写 zh-CN
 lang: zh-CN
 
-# ===== 站点地址（仓库名改成 zhryhzs-one 后必须这样写）=====
-# 项目站点 = 用户名站点 + 仓库名子路径
-# 最终网址：https://zhryhzs.github.io/zhryhzs-one/
+# ===== 站点地址（仓库已改名为 zhryhzs.github.io，属于「用户站点」）=====
+# 用户站点直接挂在域名根目录下，所以 baseurl 必须留空
+# 最终网址：https://zhryhzs.github.io/
 url: "https://zhryhzs.github.io"
-baseurl: "/zhryhzs-one"
+baseurl: ""
 
 # 时区，保证文章日期正确
 timezone: Asia/Shanghai
